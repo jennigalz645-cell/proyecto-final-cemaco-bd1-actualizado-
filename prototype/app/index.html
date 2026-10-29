@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEMACO | Tu casa, tu lugar favorito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor encabezado-contenido">
+            <a href="#" class="logo">CEMACO<span>.</span></a>
+            <nav class="navegacion">
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#compras" class="enlace-carrito" id="enlace-carrito" aria-label="Mi compra, 0 productos">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M3 3h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20 7H6"></path>
+                    <circle cx="10" cy="20" r="1.4"></circle>
+                    <circle cx="18" cy="20" r="1.4"></circle>
+                </svg>
+                <span>Mi compra</span>
+                <span class="contador-carrito" id="contador-carrito" aria-live="polite" hidden>0</span>
+            </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+            <section class="promo-carrusel" aria-label="Promociones destacadas">
+        <div class="promo-carrusel__marco">
+            <div class="promo-carrusel__diapositivas">
+                <article class="promo-carrusel__diapositiva is-active" aria-hidden="false">
+                    <div class="promo-carrusel__texto">
+                        <span class="promo-carrusel__etiqueta">PROMOCIONES CEMACO</span>
+                        <h2>Manos a la obra</h2>
+                        <p>Encuentra herramientas para cada proyecto de tu hogar.</p>
+                        <a class="promo-carrusel__boton" href="#productos">Explorar productos</a>
+                    </div>
+                    <div class="promo-carrusel__foto">
+                        <img src="https://cemacogt.vtexassets.com/arquivos/ids/311633-600-600?aspect=true&amp;height=600&amp;v=638439447269600000&amp;width=600" alt="Taladro percutor de 1/2 pulgada" fetchpriority="high">
+                        <span>Herramientas para crear</span>
+                    </div>
+                </article>
+                <article class="promo-carrusel__diapositiva" aria-hidden="true">
+                    <div class="promo-carrusel__texto">
+                        <span class="promo-carrusel__etiqueta">RENUEVA TU HOGAR</span>
+                        <h2>Comodidad en tu cocina</h2>
+                        <p>Haz más fácil preparar tus comidas favoritas.</p>
+                        <a class="promo-carrusel__boton" href="#productos">Ver productos</a>
+                    </div>
+                    <div class="promo-carrusel__foto">
+                        <img src="https://cemacogtb2b.vtexassets.com/arquivos/ids/2543082-600-auto?aspect=true&amp;height=auto&amp;v=639100073468930000&amp;width=600" alt="Microondas de 0.7 pies" loading="lazy">
+                        <span>Practicidad para tu cocina</span>
+                    </div>
+                </article>
+                <article class="promo-carrusel__diapositiva" aria-hidden="true">
+                    <div class="promo-carrusel__texto">
+                        <span class="promo-carrusel__etiqueta">COCINA Y MESA</span>
+                        <h2>Prepara algo especial</h2>
+                        <p>Equipa tu cocina con todo lo que necesitas.</p>
+                        <a class="promo-carrusel__boton" href="#productos">Descubrir opciones</a>
+                    </div>
+                    <div class="promo-carrusel__foto">
+                        <img src="https://cdn.leroymerlin.com.br/products/jogo_de_panelas_em_aco_inox__bsf_zwilling_hi_biarritz_5_pecas_1566862681_b143_600x600.jpg" alt="Set de ollas de acero inoxidable" loading="lazy">
+                        <span>Momentos para compartir</span>
+                    </div>
+                </article>
+            </div>
+            <button class="promo-carrusel__flecha promo-carrusel__flecha--anterior" type="button" aria-label="Promoción anterior">&#10094;</button>
+            <button class="promo-carrusel__flecha promo-carrusel__flecha--siguiente" type="button" aria-label="Promoción siguiente">&#10095;</button>
+            <div class="promo-carrusel__puntos" aria-label="Seleccionar promoción">
+                <button class="is-active" type="button" aria-label="Mostrar promoción 1" aria-current="true"></button>
+                <button type="button" aria-label="Mostrar promoción 2" aria-current="false"></button>
+                <button type="button" aria-label="Mostrar promoción 3" aria-current="false"></button>
+            </div>
+        </div>
+    </section>
+<section class="hero" id="inicio">
+            <div class="contenedor hero-contenido">
+                <p class="etiqueta">TODO PARA TU HOGAR</p>
+                <h1>Haz de tu casa tu lugar favorito.</h1>
+                <p>Encuentra lo que necesitas para cada espacio de tu hogar.</p>
+                <a href="#productos" class="boton boton-principal">Ver productos</a>
+            </div>
+        </section>
+
+        <section class="seccion compras-seccion" id="compras">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <p class="etiqueta">TU PEDIDO</p>
+                    <h2>Mi carrito</h2>
+                </div>
+
+                <div class="compras-grid">
+                    <div class="panel panel-carrito">
+                        <h3>Productos seleccionados</h3>
+                        <div id="lista-carrito">
+                            <p class="carrito-vacio">Tu carrito está vacío.</p>
+                        </div>
+                        <div class="total-carrito">
+                            <span>Total</span>
+                            <strong id="total">Q0.00</strong>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-checkout">
+                        <h3>Finalizar compra</h3>
+                        <form id="form-checkout">
+                            <div class="campo">
+                                <label for="cliente">Código de cliente</label>
+                                <input
+                                    type="number"
+                                    id="cliente"
+                                    name="cliente"
+                                    min="1"
+                                    required
+                                    placeholder="Ingresa tu código de cliente"
+                                >
+                            </div>
+
+                            <div class="campo">
+                                <label for="pasarela">Método de pago</label>
+                                <select id="pasarela" name="pasarela" required>
+                                    <option value="1">VisaNet</option>
+                                    <option value="2">Cuotas BAC</option>
+                                    <option value="3">Puntos Privilegio</option>
+                                    <option value="4">Efectivo contra entrega</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" id="boton-compra" class="boton boton-principal boton-completo">
+                                Confirmar compra
+                            </button>
+                        </form>
+
+                        <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="seccion productos-seccion" id="productos">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <p class="etiqueta">NUESTRO CATÁLOGO</p>
+                    <h2>Productos para ti</h2>
+                    <p>Selecciona tu sucursal para consultar las existencias.</p>
+                </div>
+
+                <div class="selector-sucursal">
+                    <label for="sucursal">Sucursal de compra</label>
+                    <select id="sucursal">
+                        <option value="1">Plaza CEMACO Z.10</option>
+                        <option value="2">CEMACO Peri-Roosevelt</option>
+                        <option value="3">Central de Distribución Amatitlán</option>
+                    </select>
+                </div>
+
+                <p id="estado-productos" class="estado" role="status"></p>
+                <div id="lista-productos" class="productos-grid"></div>
+            </div>
+        </section>
+
+
+        <section id="seccion-factura" class="seccion seccion-factura oculto">
+            <div class="contenedor">
+                <div id="factura" class="factura">
+                    <div class="factura-encabezado">
+                        <div>
+                            <h2>CEMACO<span>.</span></h2>
+                            <p>Comprobante de compra</p>
+                        </div>
+                        <div class="factura-datos">
+                            <p><strong>Documento:</strong> <span id="factura-numero">Comprobante</span></p>
+                            <p><strong>Fecha:</strong> <span id="factura-fecha"></span></p>
+                            <p><strong>Estado:</strong> <span id="factura-estado">Compra registrada</span></p>
+                        </div>
+                    </div>
+
+                    <div class="factura-informacion">
+                        <p><strong>Código de cliente:</strong> <span id="factura-cliente"></span></p>
+                        <p><strong>Sucursal:</strong> <span id="factura-sucursal"></span></p>
+                        <p><strong>Método de pago:</strong> <span id="factura-pago"></span></p>
+                    </div>
+
+                    <div class="tabla-factura-contenedor">
+                        <table class="tabla-factura">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio unitario</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody id="factura-productos"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="factura-total">
+                        <span>Total de compra</span>
+                        <strong id="factura-total">Q0.00</strong>
+                    </div>
+
+                    <p class="factura-nota">
+                        Este documento es un comprobante de la compra registrada en el prototipo.
+                        No sustituye una factura tributaria autorizada por SAT.
+                    </p>
+                </div>
+
+                <div class="acciones-factura no-imprimir">
+                    <button type="button" id="boton-imprimir" class="boton boton-principal">
+                        Imprimir / Guardar como PDF
+                    </button>
+                    <button type="button" id="boton-nueva-compra" class="boton boton-secundario">
+                        Continuar comprando
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="contenedor">
+            <a href="#inicio" class="logo logo-pie">CEMACO<span>.</span></a>
+            <p>Todo para tu casa, en un solo lugar.</p>
+        </div>
+    <p class="pie-derechos">© 2026 Proyecto final CEMACO · Diseño y desarrollo propio. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        (() => {
+            const carrusel = document.querySelector(".promo-carrusel");
+            if (!carrusel) return;
+
+            const diapositivas = Array.from(carrusel.querySelectorAll(".promo-carrusel__diapositiva"));
+            const puntos = Array.from(carrusel.querySelectorAll(".promo-carrusel__puntos button"));
+            const anterior = carrusel.querySelector(".promo-carrusel__flecha--anterior");
+            const siguiente = carrusel.querySelector(".promo-carrusel__flecha--siguiente");
+            const movimientoReducido = window.matchMedia("(prefers-reduced-motion: reduce)");
+            let indiceActual = 0;
+            let temporizador = null;
+            let pausado = false;
+
+            function mostrarDiapositiva(nuevoIndice) {
+                diapositivas[indiceActual].classList.remove("is-active");
+                diapositivas[indiceActual].setAttribute("aria-hidden", "true");
+                puntos[indiceActual].classList.remove("is-active");
+                puntos[indiceActual].setAttribute("aria-current", "false");
+
+                indiceActual = (nuevoIndice + diapositivas.length) % diapositivas.length;
+
+                diapositivas[indiceActual].classList.add("is-active");
+                diapositivas[indiceActual].setAttribute("aria-hidden", "false");
+                puntos[indiceActual].classList.add("is-active");
+                puntos[indiceActual].setAttribute("aria-current", "true");
+            }
+
+            function iniciar() {
+                window.clearInterval(temporizador);
+                if (!pausado && !movimientoReducido.matches) {
+                    temporizador = window.setInterval(() => {
+                        mostrarDiapositiva(indiceActual + 1);
+                    }, 5000);
+                }
+            }
+
+            function pausar() {
+                pausado = true;
+                window.clearInterval(temporizador);
+            }
+
+            function reanudar() {
+                pausado = false;
+                iniciar();
+            }
+
+            anterior.addEventListener("click", () => {
+                mostrarDiapositiva(indiceActual - 1);
+                iniciar();
+            });
+
+            siguiente.addEventListener("click", () => {
+                mostrarDiapositiva(indiceActual + 1);
+                iniciar();
+            });
+
+            puntos.forEach((punto, indice) => {
+                punto.addEventListener("click", () => {
+                    mostrarDiapositiva(indice);
+                    iniciar();
+                });
+            });
+
+            
+            
+            document.addEventListener("visibilitychange", () => {
+                if (document.hidden) pausar();
+                else reanudar();
+            });
+            movimientoReducido.addEventListener?.("change", iniciar);
+
+            iniciar();
+        })();
+    </script>
+<script src="asistente-voz.js"></script>
+</body>
+</html>
